@@ -1,4 +1,4 @@
 {:deps {org.babashka/cli
         #_ {:local/root "../forks/babashka/cli"}
         {:git/url "https://github.com/sohalt/babashka-cli"
-         :git/sha "d030850c39050bea8c5238f70f18ca87249f374c"}}}
+         :git/sha "00e4a2a0d4007b3cf45fdcbc656a5ad7a311afe7"}}}
