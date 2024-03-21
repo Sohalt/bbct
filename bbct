@@ -10,8 +10,8 @@
                          :foo-opt2 {:coerece :string}
                          :foo-flag {:coerce :boolean
                                     :alias :l}}}
-   {:fn prn :cmds ["foo" "bar" :spec {:bar-opt {:coerce :keyword}
-                                      :bar-flag {:coerce :boolean}}]}
+   {:fn prn :cmds ["foo" "bar"] :spec {:bar-opt {:coerce :keyword}
+                                       :bar-flag {:coerce :boolean}}}
    {:fn prn :cmds ["bar"]}
    {:fn prn :cmds ["bar-baz"]}
    {:fn prn :cmds []}])
