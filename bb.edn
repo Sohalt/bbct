@@ -1,0 +1,3 @@
+{:paths ["."]
+ :deps {bbct/bbct {:local/root "."}}
+ :bbin/bin {bbct {:main-opts ["-f" "bbct"]}}}

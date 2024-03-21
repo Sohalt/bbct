@@ -1,0 +1,23 @@
+#!/usr/bin/env bb
+;; -*- mode: clojure -*-
+
+(ns bbct
+  (:require [babashka.cli :as cli] :reload))
+
+(def cmd-table
+  [{:fn prn :cmds ["foo"] :spec {:foo-opt {:coerece :string
+                                   :alias :f}
+                         :foo-opt2 {:coerece :string}
+                         :foo-flag {:coerce :boolean
+                                    :alias :l}}}
+   {:fn prn :cmds ["foo" "bar" :spec {:bar-opt {:coerce :keyword}
+                                      :bar-flag {:coerce :boolean}}]}
+   {:fn prn :cmds ["bar"]}
+   {:fn prn :cmds ["bar-baz"]}
+   {:fn prn :cmds []}])
+
+(defn -main [& args]
+  (cli/dispatch cmd-table args {:completion {:command "bbct"}}))
+
+(when (= *file* (System/getProperty "babashka.file"))
+  (apply -main *command-line-args*))
